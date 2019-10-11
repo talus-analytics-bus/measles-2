@@ -1,0 +1,209 @@
+@import '../../../assets/styles/colors.scss';
+
+$spacing: 5px;
+
+.mapOverlay {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  z-index: 2;
+  bottom: 0;
+  right: 10px;
+
+  // Scale legend size to be smaller than default size.
+  transform: translateY(calc(100% - 28px));
+  transition: all .5s;
+  transform-origin: bottom;
+
+  .toggleButton {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    font-size: initial;
+    padding: $spacing/2;
+    width: 150px;
+
+    background-color: white;
+    color: #808183;
+
+    cursor: pointer;
+
+    i, &::before {
+      font-size: 1.0605em !important;
+    }
+    i {
+      transform: rotate(-90deg)scaleY(1.2);
+      transition: all .5s;
+      vertical-align: middle;
+      font-size: initial;
+      margin-left: 20px;
+      top: 2px;
+      right: -3px;
+      position: relative;
+    }
+    &::before {
+      font-family: 'Open Sans', sans-serif;
+      content: 'show legend';
+    }
+  }
+
+  &.open .toggleButton {
+    i {
+      transition: all .5s;
+      top: 0;
+      right: -2px;
+      transform: rotate(90deg)scaleY(1.2);
+    }
+    &::before {
+      content: 'hide legend';
+    }
+  }
+}
+
+.open {
+  // Scale legend size to be smaller than default size, and translate it so it
+  // is visible.
+  transform: scale(1);
+  transition: all .5s;
+}
+.sections {
+  display: flex;
+  flex-flow: row;
+  padding: $spacing*2;
+  padding-bottom: $spacing*10 - 2px;
+  background-color: rgba(255, 255, 255, 0.92);
+
+  .section {
+    display: flex;
+    flex-flow: column;
+    cursor: default;
+    color: #161616;
+
+    padding-right: $spacing*22;
+    &:last-child {
+      padding-right: 3px;
+    }
+
+    .sectionName {
+      font-family: 'rawline', serif;
+      font-size: 1.0605em;
+      margin-bottom: 10px;
+    }
+    .legendEntryGroups {
+      display: flex;
+      flex-flow: row;
+      .legendEntryGroup {
+        display: flex;
+        flow-flow: row;
+
+        $rect-height: 20px * .8;
+        $rect-width: 55px * .8;
+        $circle-radius: $rect-height;
+        $rect-border-width: 1px;
+
+        .legendEntry {
+          width: $rect-width;
+          &.circle {
+            width: auto;
+          }
+          display: flex;
+          flex-flow: column;
+          position: relative;
+          &.dataNotAvailable {
+            margin-left: $rect-width / 2;
+            .legendIcon.rect {
+              border-color: $grey;
+            }
+            .legendIcon.circle {
+              margin: auto 0;
+              background-color: $no-data-gray;
+              border-color: $grey;
+              // background: repeating-linear-gradient(
+              //   -45deg,
+              //   #b02c3a,
+              //   #b02c3a 2.5px,
+              //   white 2.5px,
+              //   white 5px
+              // );
+            }
+          }
+
+          .legendIcon {
+            &.rect {
+              width: $rect-width;
+              height: $rect-height;
+              border: $rect-border-width solid #666666;
+            }
+            &.circle {
+              border-radius: 9999px;
+              width: $circle-radius;
+              height: $circle-radius;
+              margin: auto 25px;
+              background-color: #b02c3a;
+              opacity: 0.85;
+              border: 1px solid white;
+              // box-shadow: 5px 5px 10px 0px #0000008c;
+              // -webkit-box-shadow: 5px 5px 10px 0px #0000008c;
+            }
+          }
+          .legendLabel {
+            position: absolute;
+            font-size: 0.8605em;
+            white-space: nowrap;
+            bottom: 0;
+            top: $rect-height + 10px;
+            line-height: 1.1;
+            &.wrap {
+              white-space: normal;
+            }
+          }
+          &:not(.dataNotAvailable) {
+            &:nth-child(3) {
+              .legendIcon.circle {
+                // right: $circle-radius/2;
+                // position: absolute;
+              }
+            }
+            &:nth-child(2) {
+              .legendIcon.circle {
+                width: $circle-radius * .66;
+                height: $circle-radius * .66;
+                // margin: auto;
+              }
+            }
+            &:nth-child(1) {
+              .legendIcon.circle {
+                width: $circle-radius * .33;
+                height: $circle-radius * .33;
+                // margin: auto;
+              }
+            }
+          }
+          &.circle {
+            &:first-child {
+              .legendIcon.circle { margin-left: 0; }
+              .legendLabel { left: -1px; }
+            }
+            &:last-child {
+              .legendIcon.circle { margin-right: 0; }
+            }
+          }
+          &:last-child:not(:first-child) {
+            &:not(.circle) {
+              .legendLabel {
+                right: -2*$rect-border-width;
+              }
+            }
+            &.circle .legendLabel {
+              right: -1px;
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}

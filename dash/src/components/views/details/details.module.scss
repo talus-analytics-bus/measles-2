@@ -1,0 +1,86 @@
+@import '../../../assets/styles/colors.scss';
+
+$drawer-width: 360px;
+$header-height: 100px;
+$button-width: 200px;
+$spacing: 20px;
+.details {
+  display: flex;
+  flex-flow: row;
+
+  .sidebar {
+    display: flex;
+    flex-flow: column;
+    background-color: #f1f1f1;
+    padding: $spacing;
+    margin-left: $spacing*2;
+
+    > .title {
+      // Name of country or "Global caseload"
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+
+      font-family: 'Raleway', serif;
+      font-weight: bold;
+      font-size: 2.2em;
+      color: black;
+      margin-bottom: $spacing;
+
+      .flag {
+        height: 75px;
+        margin-right: $spacing;
+      }
+
+    }
+
+    .map {
+
+      img {
+
+      }
+
+    }
+
+    .item {
+      display: flex;
+      flex-flow: column;
+      margin-top: $spacing;
+      
+      .title {
+        color: $dark-grey;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.46em;
+        font-weight: bold;
+
+        .info {
+          // TODO
+          img {
+            // TODO
+          }
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-flow: row;
+        .value, .label {
+          font-size: 1.57em;
+        }
+        .value {
+          color: black;
+          font-family: 'rawline', serif;
+          font-weight: bold;
+        }
+        .label {
+          color: $dark-grey;
+          font-family: 'Open Sans', sans-serif;
+        }
+      }
+      .source {
+        // Just use .dataSource from index.scss
+      }
+    }
+
+  }
+}

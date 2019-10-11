@@ -1,0 +1,144 @@
+@import '../../../assets/styles/colors.scss';
+$logo-height: 70px;
+
+.logo {
+  background-color: $dark-grey;
+  z-index: 3;
+  display: flex;
+  justify-content: left;
+  position: relative;
+
+  $navButtonSize: 75px;
+
+  &.map + div {
+    background-color: #122336;
+  }
+
+  .navButtons {
+    display: flex;
+    flex-flow: row;
+    position: absolute;
+    right: 0;
+    bottom: -$navButtonSize/2;
+  }
+
+  // .navButtons .active {
+  &.loading .navButtons .active {
+    // Circle
+    .buttonSpinner {
+      opacity: 1;
+      transition: .5s opacity;
+    }
+  }
+  .navButtons .buttonSpinner {
+    opacity: 0;
+    transition: .5s opacity;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    transform-origin: center;
+    @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+  }
+
+
+  .navButtons {
+    $spinnerShift: 4px;
+    $spinnerSize: $navButtonSize + $spinnerShift; // 4px = borders
+    .navButtonContainer {
+      position:relative;
+    }
+    // Circle
+    .buttonSpinner {
+      border-radius: 9999px;
+      background: $loading-spinner-gradient;
+      position: absolute;
+      height: $spinnerSize;
+      width: $spinnerSize;
+      z-index: 10000;
+      // left: 2px;
+      // top: 2px;
+    }
+    // Rect
+    // .buttonSpinner {
+    //   border-radius: 0 0 0 8px;
+    //   background: $loading-spinner-gradient;
+    //   position: absolute;
+    //   height: $spinnerSize/2;
+    //   width: $spinnerWidth;
+    //   top: ($navButtonSize/2) + 2px;
+    //   left: ($navButtonSize/2) - ($spinnerWidth/2) + 2px;
+    // }
+  }
+
+  .navButtons .navButtonContainer.active .navButton {
+    background-color: darken(#5781ab, 15%);
+    border: 2px solid white;
+  }
+  .navButtons a, .navButtons {
+    .navButton {
+      z-index: 0;
+      display: flex;
+      flex-flow:row;
+      border-radius: 9999px;
+      background-color: #5781ab;
+      height: $navButtonSize;
+      width: $navButtonSize;
+      float: right;
+      box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.29);
+      -webkit-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.29);
+      position: relative;
+      line-height: $navButtonSize;
+      cursor: pointer;
+      margin-right: 10px;
+
+      &:hover {
+        background-color: darken(#5781ab, 15%);
+      }
+      &:active {
+        background-color: darken(#5781ab, 25%);
+      }
+      border: 2px solid transparent;
+      img {
+        height: $navButtonSize*.6;
+        display: flex;
+        flex-flow:row;
+        align-content: center;
+        justify-self: center;
+        margin: auto;
+        position: relative;
+      }
+    }
+  }
+
+  a {
+    display: flex;
+    .img {
+      height: $logo-height;
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    justify-content: center;
+    margin-left: 40px;
+    line-height: 1.2;
+
+    .title, .subtitle {
+      color: white;
+      // align-self: center;
+    }
+    .title {
+      font-family: 'Gotham Bold', serif;
+      font-size: 2em;
+      color: white;
+      align-self: center;
+    }
+    .subtitle {
+      font-family: 'Gotham Book', serif;
+      font-style: italic;
+      color: $grey;
+    }
+  }
+
+}

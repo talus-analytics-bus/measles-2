@@ -1,0 +1,105 @@
+/* Gotham Bold */
+@font-face {
+  font-family: 'Gotham Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Gotham Bold'), url('../fonts/gotham/bold/Gotham Bold.woff') format('woff');
+}
+
+/* Gotham Book */
+@font-face {
+  font-family: 'Gotham Book';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Gotham Book'), url(../fonts/gotham/book/GOTHAMBOOK.woff) format('woff');
+}
+
+/* Open Sans */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Open Sans'), local('OpenSans-Regular'),
+  url(../fonts/openSans/regular/OpenSans-Regular.ttf) format('ttf'),
+  url(../fonts/openSans/regular/OpenSans-Regular.woff2) format('woff2'),
+  url(../fonts/openSans/regular/OpenSans-Regular.woff) format('woff'),
+  url(../fonts/openSans/regular/OpenSans-Regular.eot) format('eot');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+  url(../fonts/openSans/bold/OpenSans-Bold.ttf) format('ttf'),
+  url(../fonts/openSans/bold/OpenSans-Bold.woff2) format('woff2'),
+  url(../fonts/openSans/bold/OpenSans-Bold.woff) format('woff'),
+  url(../fonts/openSans/bold/OpenSans-Bold.eot) format('eot');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'),
+  url(../fonts/openSans/italic/OpenSans-Italic.ttf) format('ttf'),
+  url(../fonts/openSans/italic/OpenSans-Italic.woff2) format('woff2'),
+  url(../fonts/openSans/italic/OpenSans-Italic.woff) format('woff'),
+  url(../fonts/openSans/italic/OpenSans-Italic.eot) format('eot');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: bold;
+  src: local('Open Sans BoldItalic'), local('OpenSans-BoldItalic'),
+  url(../fonts/openSans/boldItalic/OpenSans-BoldItalic.ttf) format('ttf'),
+  url(../fonts/openSans/boldItalic/OpenSans-BoldItalic.woff2) format('woff2'),
+  url(../fonts/openSans/boldItalic/OpenSans-BoldItalic.woff) format('woff'),
+  url(../fonts/openSans/boldItalic/OpenSans-BoldItalic.eot) format('eot');
+}
+
+/* Raleway */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Raleway'), local('Raleway-Regular'),
+  url(../fonts/raleway/regular/Raleway-Regular.ttf) format('ttf'),
+  url(../fonts/raleway/regular/Raleway-Regular.woff2) format('woff2'),
+  url(../fonts/raleway/regular/Raleway-Regular.woff) format('woff'),
+  url(../fonts/raleway/regular/Raleway-Regular.eot) format('eot');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Raleway Bold'), local('Raleway-Bold'),
+  url(../fonts/raleway/bold/Raleway-Bold.ttf) format('ttf'),
+  url(../fonts/raleway/bold/Raleway-Bold.woff2) format('woff2'),
+  url(../fonts/raleway/bold/Raleway-Bold.woff) format('woff'),
+  url(../fonts/raleway/bold/Raleway-Bold.eot) format('eot');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Raleway Italic'), local('Raleway-Italic'),
+  url(../fonts/raleway/italic/Raleway-Italic.ttf) format('ttf'),
+  url(../fonts/raleway/italic/Raleway-Italic.woff2) format('woff2'),
+  url(../fonts/raleway/italic/Raleway-Italic.woff) format('woff'),
+  url(../fonts/raleway/italic/Raleway-Italic.eot) format('eot');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: bold;
+  src: local('Raleway BoldItalic'), local('Raleway-BoldItalic'),
+  url(../fonts/raleway/boldItalic/Raleway-BoldItalic.ttf) format('ttf'),
+  url(../fonts/raleway/boldItalic/Raleway-BoldItalic.woff2) format('woff2'),
+  url(../fonts/raleway/boldItalic/Raleway-BoldItalic.woff) format('woff'),
+  url(../fonts/raleway/boldItalic/Raleway-BoldItalic.eot) format('eot');
+}

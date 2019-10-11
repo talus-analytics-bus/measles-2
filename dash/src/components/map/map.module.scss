@@ -1,0 +1,93 @@
+@import '../../assets/styles/colors.scss';
+
+$title-font-size: 16px;
+$font-size: 14px;
+$text-spacing: 10px;
+$container-spacing: 20px;
+$border-radius: 5px;
+$icon-height: 20px;
+
+.mapOverlay {
+  position: absolute;
+  z-index: 2;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: auto auto;
+
+  right: 20px;
+  bottom: -$border-radius;
+  padding-bottom: $border-radius;
+
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid $grey;
+  border-radius: $border-radius;
+
+  // grid container
+  // each half of legend
+  & > div {
+    margin-top: $container-spacing;
+    margin-bottom: $container-spacing;
+    padding-right: $container-spacing;
+    padding-left: $container-spacing;
+
+    // title
+    & > p {
+      font-size: $title-font-size;
+      font-weight: bold;
+      margin-bottom: $text-spacing;
+    }
+
+    // flex container
+    // each row of legend (except title)
+    & > div {
+      display: flex;
+
+      &:not(:last-child) {
+        margin-bottom: $text-spacing;
+      }
+
+      & > p {
+        font-size: $font-size;
+        font-weight: bold;
+        margin-left: $text-spacing;
+      }
+
+      & > img {
+        height: $icon-height;
+      }
+    }
+
+    // middle divider
+    &:first-child {
+      border-right: 1px solid $grey;
+    }
+    &:last-child {
+      border-left: 1px solid $grey;
+    }
+  }
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  min-width: $icon-height;
+  min-height: $icon-height;
+
+  &.critical {
+    background-color: $red;
+  }
+  &.alerted {
+    background-color: $yellow;
+  }
+  &.stable {
+    background-color: $green;
+  }
+}
+
+.options {
+}

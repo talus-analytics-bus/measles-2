@@ -1,0 +1,21 @@
+@import '../../../assets/styles/colors.scss';
+
+.about {
+  height: 100%;
+  max-width: 1010px;
+  padding: 20px;
+  margin: 0 auto;
+  border-left: 1px solid #979797;
+  border-right: 1px solid #979797;
+
+  .title {
+    font-weight: bold;
+    // font-family: 'rawline', serif;
+    font-size: 30px;
+    color: #23385e;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+}

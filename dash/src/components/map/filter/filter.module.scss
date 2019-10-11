@@ -1,0 +1,97 @@
+@import '../../../assets/styles/colors.scss';
+
+$padding: 10px;
+$overlap: 10px;
+
+.mapOverlay {
+  position: absolute;
+  z-index: 2;
+}
+
+.filter {
+  display: grid;
+  grid-auto-flow: row;
+  // grid-template-columns: auto 30px;
+  transition-duration: 300ms;
+
+  right: 20px;
+  top: -$overlap;
+  width: 180px;
+  padding: 20px 20px 10px 20px;
+
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid $grey;
+  border-radius: 5px;
+  cursor: default;
+
+  overflow-y: hidden;
+  max-height: 30px;
+
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+  // Scale filter menu size to be smaller than default size.
+  transform: scale(0.75);
+  transform-origin: top right;
+
+  & > div:first-child {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: start;
+    p {
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: underline;
+      padding-right: 10px;
+      cursor: pointer;
+    }
+    i {
+      margin-right: 10px;
+      cursor: pointer;
+      padding: auto;
+      transition-duration: 300ms;
+
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  & > div:nth-child(2) {
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    display: grid;
+    grid-auto-flow: row;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  & > div > p {
+    font-size: 20px;
+  }
+
+  .contentContainer {
+    .facilityTypeOption {
+      input {
+        position: relative;
+        top: -1px;
+      }
+      label, input { cursor: pointer; }
+      label { white-space: nowrap; }
+      &:not(:first-of-type):not(:last-of-type) {
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+.open {
+  // Scale menu size to be smaller than default size, and translate it so it
+  // is visible.
+  transform: scale(0.75) translateY(0);
+  max-height: 150px; /* approximate max height */
+}

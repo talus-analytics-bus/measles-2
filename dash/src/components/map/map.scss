@@ -1,0 +1,18 @@
+@import '../../assets/styles/colors.scss';
+
+/* Overrides for mapbox stylesheet */
+
+.mapboxgl-popup-content {
+  padding: 0;
+  box-shadow: $layout-box-shadow;
+}
+
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+
+// trying to change tip color when its on top
+// too bad its an imported SVG img :(
+// .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
+//     background-color: red;
+//   }

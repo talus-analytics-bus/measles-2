@@ -1,0 +1,79 @@
+@import '../../../assets/styles/colors.scss';
+
+$button-width: 100px;
+$button-font-size: 16px;
+$spacing: 10px;
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr $button-width $button-width $button-width $button-width;
+  grid-template-rows: auto;
+  grid-column-gap: $spacing;
+  padding: 0 $spacing 0 $spacing;
+  background-color: $light-grey;
+  border-bottom: 2px solid $grey;
+  z-index: 4;
+  box-shadow: $layout-box-shadow;
+
+  .button,
+  a {
+    background-color: transparent;
+    border: transparent;
+    font-size: $button-font-size;
+    place-self: center;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  a.back {
+    width: 149.06px; // TODO elegantly
+    place-self: center left;
+    &:hover {
+      text-decoration: none;
+    }
+
+    button {
+      // white-space: nowrap;
+      background-color: #23385e;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      height: 40px;
+      padding: 0 10px;
+      align-self: center;
+      white-space: nowrap;
+      &:hover {
+        text-decoration: none;
+      }
+      i {
+        vertical-align: bottom;
+        margin: 0 5px 0 -4px;
+      }
+    }
+  }
+}
+
+.toggleWatermark {
+  display: flex;
+  align-items: center;
+  // padding-left: 10px;
+
+  * {
+    // Interactive elements should have pointer cursor.
+    cursor: pointer;
+  }
+
+  & > label {
+    > input {
+      // Scoot checkbox up so it aligns with middle of label.
+      top: -2px;
+      position: relative;
+
+      // Add spacing between label and checkbox.
+      margin-right: 10px;
+    }
+  }
+}

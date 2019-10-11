@@ -1,0 +1,155 @@
+@import '../../../assets/styles/colors.scss';
+
+$spacing: 10px;
+
+.container {
+  width: 400px;
+  font-family: 'Gotham Book';
+  font-weight: normal;
+}
+
+.header {
+  display: grid;
+  background-color: $light-grey-2;
+  font-family: 'Gotham Bold';
+  color: $dark-grey;
+  border-radius: $border-radius $border-radius 0 0;
+}
+
+.titleContainer {
+  padding: $spacing;
+
+  .stateName {
+    font-size: 1.5em;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+
+    img {
+      height: 60px;
+      margin-right: 5px;
+    }
+  }
+}
+
+button {
+  font-family: 'Cabin Bold', 'Open Sans', sans-serif;
+  padding: 10px 30px;
+  font-size: .9em;
+  float: right;
+  margin: 0 $spacing $spacing 0;
+  border-radius: $border-radius;
+  border: none;
+
+  background-color: $btn-primary;
+  color: white;
+  font-weight: bold;
+  opacity: .9;
+
+  &:hover {
+    background-color: lighten($btn-primary, 10%);
+  }
+  &:active {
+    background-color: $btn-primary;
+    outline: none;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.29);
+    -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.29);
+  }
+}
+
+.dataDateStamp {
+  font-size: 1.05em;
+  font-family: 'Gotham Bold', serif;
+  padding: $spacing;
+  color: $dark-grey;
+}
+
+.data {
+  display: flex;
+  flex-flow: column;
+
+  padding: $spacing;
+  // padding-top: 0;
+
+  .datum {
+    margin-top: 20px;
+    &:first-child {
+      margin-top: 0;
+    }
+    .label {
+      font-family: 'Gotham Book', serif;
+      font-size: 1.1em;
+    }
+    .value {
+      font-size: 1.67em;
+      color: black;
+      font-family: 'Gotham Bold';
+      &.incidence {
+        color: $value-red;
+      }
+      &.notAvail {
+        color: $grey;
+        font-style: italic;
+        font-family: 'Gotham Book', serif;
+        font-size: 1em;
+      }
+      .delta {
+        font-size: initial;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+
+        position: relative;
+        left: -3px;
+
+        i {
+          // size?
+          font-size: 1.7em;
+        }
+        .delta-value {
+          font-family: 'rawline', serif;
+          font-weight: bold;
+          .sign {
+            font-size: 1.852em;
+          }
+          .num {
+            font-size: 1.405em;
+            line-height: 0; // Required for vertical alignment with other divs
+          }
+        }
+        .delta-text {
+          font-size: .75em;
+          color: $dark-grey;
+          font-family: 'Gotham Book', serif;
+          margin-left: 10px;
+        }
+      }
+      .delta {
+        &.inc {
+          i {
+            transform: rotate(-90deg);
+            transform-origin: center;
+          }
+          i, .delta-value {
+            color: $value-red;
+          }
+        }
+        &.dec {
+          i {
+            transform: rotate(90deg);
+          }
+          i, .delta-value {
+            color: $value-green;
+          }
+        }
+        &.same {
+          .delta-text { margin-left: 5px;}
+          .delta-value, i {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+}

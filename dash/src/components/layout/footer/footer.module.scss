@@ -1,0 +1,27 @@
+@import '../../../assets/styles/colors.scss';
+
+$button-width: 250px;
+$button-font-size: 16px;
+$spacing: 10px;
+
+.footer {
+  display: grid;
+  grid-template-columns: auto $button-width $button-width $button-width auto;
+  grid-template-rows: auto;
+  grid-column-gap: $spacing;
+  padding: 0 $spacing 0 $spacing;
+  background-color: $grey;
+  z-index: 3;
+
+  button {
+    cursor: default;
+    background-color: transparent;
+    border: transparent;
+    font-size: $button-font-size;
+    text-align: center;
+
+    // &:hover {
+    //   text-decoration: underline;
+    // }
+  }
+}

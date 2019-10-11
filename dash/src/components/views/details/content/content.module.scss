@@ -1,0 +1,202 @@
+@import '../../../../assets/styles/colors.scss';
+
+.content {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 150px auto auto;
+  padding: 20px;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: 350px auto auto;
+  padding: 0 20px 20px 20px;
+  border-bottom: 2px solid $grey;
+
+  & > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:first-child {
+      padding-right: 20px;
+    }
+
+    &:nth-child(2) {
+      padding: 0 20px 0 20px;
+      border-right: 2px solid $grey;
+      border-left: 2px solid $grey;
+    }
+
+    &:last-child {
+      padding-left: 20px;
+    }
+
+    //margin to the right of icons
+    & > *:first-child {
+      margin-right: 20px;
+    }
+  }
+}
+
+
+// Styling for content of "Content" subsections.
+.detailsUpdates,
+.alertHistory {
+
+  // Add padding to sections of page.
+  padding: 20px;
+
+  // Remove default left and right table cell borders from BS3
+  td, th {
+    border-left: none !important;
+    border-right: none !important;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  // Remove default borders from BS3 table cells, and add top one only.
+  td {
+    border:none !important; border-top:
+    1px solid #e6e6e6 !important;
+  }
+
+  // Set min height for rows.
+  tr, th, td { height: 30px; }
+
+  // Remove default outer borders from BS3 tables.
+  table { border: none; }
+
+  // Show thick dividers between sections
+  &:not(:last-child) { border-bottom: 2px solid $grey; }
+
+  // Capitalize first letter of each table cell
+  td::first-letter { text-transform: uppercase; }
+}
+
+.detailsUpdates {
+  th {
+    width: 33%;
+  }
+}
+.alertHistory {
+  th {
+    width: 25%;
+  }
+  tr.cleared {
+    color: darkgray;
+  }
+}
+
+.title,
+.highlighted {
+  font-size: 20px;
+  font-weight: bold;
+  // font-family: 'rawline', serif;
+}
+.highlighted {
+  // color: $red;
+}
+.date {
+  color: $grey;
+}
+
+div.critical {
+  background-color: $critical;
+}
+div.alerted {
+  background-color: $alerted;
+}
+div.stable {
+  background-color: $stable;
+}
+
+p.critical,
+span.critical {
+  color: $critical;
+}
+p.alerted,
+span.alerted {
+  color: $alerted;
+}
+p.stable,
+span.stable {
+  color: $stable;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  // font-weight: bold;
+  font-size: 1.3em;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 120px;
+  height: 40px;
+
+  text-transform: uppercase;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  min-width: 100px;
+  min-height: 100px;
+
+  & > span {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+  }
+}
+
+// //tables
+// .table {
+//   width: 100%;
+//   padding-top: 10px;
+//   & > tr > th {
+//     text-align: left;
+//   }
+// }
+
+.historyTable > tr {
+  padding-top: 2px;
+  border-bottom: 2px solid red;
+}
+
+.alertIcons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column;
+  max-width: 120px;
+  justify-content: center;
+  &.triple {
+    flex-flow: wrap;
+  }
+  &.multi {
+    img {
+      height: 50px;
+      margin: 4px;
+    }
+    &.triple {
+      img {
+        margin: 0 4px;
+      }
+    }
+  }
+}
+.alertGraphic {
+  .title::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.image {
+  height: 100px;
+}
